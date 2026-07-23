@@ -34,4 +34,8 @@ function load(){try{let x=JSON.parse(localStorage.getItem('seatingHelperV1'));if
 function toggleMode(){let m=$('#layoutMode').value;$('#gridSettings').classList.toggle('hidden',m!=='grid');$('#islandSettings').classList.toggle('hidden',m!=='island');$('#uSettings').classList.toggle('hidden',m!=='u')}
 function switchTab(name){document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));$('#'+name).classList.add('active');document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===name));if(name==='projector'){renderAll();window.scrollTo(0,0)}}
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>switchTab(b.dataset.tab));$('#layoutMode').onchange=()=>{toggleMode();state.arranged=false};$('#generate').onclick=buildTemplate;$('#addSeat').onclick=addSeat;$('#addCondition').onclick=()=>conditionHTML();$('#saveConfig').onclick=()=>{save();show('設定已儲存。','ok')};$('#openProjection').onclick=()=>switchTab('projector');$('#backTeacher').onclick=()=>switchTab('teacher');$('#startArrange').onclick=arrange;$('#print').onclick=()=>window.print();load();
-</script></body></html>
+</script><div style="text-align:center; padding:14px; color:#68738a; font-size:12px; background:#f5f7fb;">
+    © 2026 Made by KCISLK IRISCHANG. All rights reserved.
+</div>
+</body>
+</html>
